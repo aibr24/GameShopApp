@@ -1,7 +1,7 @@
 import React from "react";
-import defaultUKNOW from "../../defaultUKNOW.jpg";
 
 //styles
+import defaultUKNOW from "../../defaultUKNOW.jpg";
 import { ListItem, Left, Thumbnail, Body, Right } from "native-base";
 import { PubDescription } from "./styles";
 
