@@ -9,5 +9,12 @@ export const HomePageBackground = styled.ImageBackground`
 export const TopView = styled.View`
   align-items: center;
   justify-content: center;
-  height: 80%;
+  height: 50%;
+`;
+
+export const ButtonView = styled.View`
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1px;
 `;
