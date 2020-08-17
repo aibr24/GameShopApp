@@ -9,12 +9,15 @@ import { List, Content, Spinner } from "native-base";
 //stores
 import gameStore from "../../stores/GameStore";
 
-const GameList = () => {
+const GameList = ({ navigation, route }) => {
   if (gameStore.loading) return <Spinner />;
+  const publisher = route.params?.publisher;
 
-  const gameList = gameStore.games.map((game) => (
-    <GameItem game={game} key={game.id} />
-  ));
+  const gameList = publisher
+    ? publisher.games
+        .map((game) => gameStore.getGameById(game.id))
+        .map((game) => <GameItem game={game} key={game.id} />)
+    : gameStore.games.map((game) => <GameItem game={game} key={game.id} />);
 
   return (
     <Content>

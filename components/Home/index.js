@@ -3,7 +3,7 @@ import React from "react";
 import { Button, View, Text, Container, Content } from "native-base";
 import { HomePageBackground, TopView } from "./styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <HomePageBackground
       source={{
@@ -12,10 +12,16 @@ const Home = () => {
       }}
     >
       <TopView>
-        <Button block dark onPress={() => alert("you pressed lol")}>
+        <Button block dark onPress={() => navigation.navigate("Games")}>
           <Text>Games</Text>
         </Button>
-        <Button block dark onPress={() => alert("you pressed lol")}>
+        <Button
+          block
+          dark
+          onPress={() => {
+            navigation.navigate("Publisher");
+          }}
+        >
           <Text>Publishers</Text>
         </Button>
       </TopView>

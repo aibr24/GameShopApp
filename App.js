@@ -1,10 +1,14 @@
 import React from "react";
 
-import Home from "./components/Home";
+//styles
 import { ThemeProvider } from "styled-components";
 
+//components
+import { NavigationContainer } from "@react-navigation/native";
+import Home from "./components/Home";
 import PublisherList from "./components/PublisherList";
 import GameList from "./components/GameList";
+import RootNav from "./components/Navigation";
 
 const theme = {
   light: {
@@ -22,9 +26,9 @@ const theme = {
 export default function App() {
   return (
     <ThemeProvider theme={theme.light}>
-      {/* <Home /> */}
-      {/* <PublisherList /> */}
-      <GameList />
+      <NavigationContainer>
+        <RootNav />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
