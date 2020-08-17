@@ -12,17 +12,15 @@ const RootNav = () => {
 
   return (
     <Navigator initialRouteName="Home">
-      <Screen name="Home" component={Home} />
+      <Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Screen name="Publisher" component={PublisherList} />
       <Screen
         name="Games"
         component={GameList}
-        // options={({ route }) => {
-        //   const { publisher } = route.params;
-        //   return {
-        //     title: publisher.name,
-        //   };
-        // }}
+        options={({ route }) => {
+          const publisher = route.params?.publisher;
+          return publisher ? { title: publisher.name } : { title: "Games" };
+        }}
       />
     </Navigator>
   );
